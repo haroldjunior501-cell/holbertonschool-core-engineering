@@ -11,6 +11,9 @@ async def handler(websocket):
         await websocket.send(message)
 
 
+connection_handler = handler
+
+
 async def main():
     """Start the WebSocket echo server."""
     async with websockets.serve(handler, "localhost", 8765):
